@@ -1,0 +1,13 @@
+# Pasta de secrets do Streamlit
+.streamlit/secrets.toml
+
+# Ambiente virtual (se você usar venv)
+venv/
+
+# Cache do Python
+__pycache__/
+
+# Arquivos temporários do sistema
+*.log
+*.sqlite3
+.DS_Store

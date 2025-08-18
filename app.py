@@ -13,9 +13,19 @@ DB_PORT = st.secrets["db"]["port"]
 
 engine = create_engine(f"postgresql+psycopg2://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}")
 
-nome_tabela = "resultados_base_teste"
 
-# Agora usa engine no Pandas
+st.header('Resultado Geral')
+nome_tabela = 'vw_total_geral'
 df = pd.read_sql(f"SELECT * FROM {nome_tabela} ;", engine)
-
 st.dataframe(df)
+
+st.subheader('Resultado ultimos dias')
+nome_tabela_resultado_ultimos_dias = 'vw_ultimos_resultados_diarios'
+df = pd.read_sql(f"SELECT * FROM {nome_tabela} ;", engine)
+st.dataframe(df)
+
+st.subheader('Resultado ultimos apostas')
+nome_tabela = 'vw_ultimos_resultados'
+df = pd.read_sql(f"SELECT * FROM {nome_tabela} ;", engine)
+st.dataframe(df)
+

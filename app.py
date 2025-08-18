@@ -20,12 +20,12 @@ df = pd.read_sql(f"SELECT * FROM {nome_tabela} ;", engine)
 st.dataframe(df)
 
 st.subheader('Resultado ultimos dias')
-nome_tabela_resultado_ultimos_dias = 'vw_ultimos_resultados_diarios'
+nome_tabela = 'vw_ultimos_resultados_diarios'
 df = pd.read_sql(f"SELECT * FROM {nome_tabela} ;", engine)
 st.dataframe(df)
 
 st.subheader('Resultado ultimos apostas')
 nome_tabela = 'vw_ultimos_resultados'
 df = pd.read_sql(f"SELECT * FROM {nome_tabela} ;", engine)
-st.dataframe(df)
+st.dataframe(df,width=2000)
 
